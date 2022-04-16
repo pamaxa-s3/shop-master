@@ -1,7 +1,7 @@
 <?php
    include $_SERVER['DOCUMENT_ROOT'] . '/Configs/db.php';
 
-$sql = "DELETE FROM `products` WHERE `products`.`id` = '" . $_GET['id'] . "'";
+$sql = "DELETE FROM `categories` WHERE `categories`.`id` = '" . $_GET['id'] . "'";
 
 if ($conn->query($sql) === TRUE) {
    echo "Record deleted successfully";
@@ -11,5 +11,5 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 
-header('Location: /admin/products.php');
+header('Location: /admin/options/edit-category.php');
 ?>

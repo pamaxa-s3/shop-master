@@ -3,9 +3,9 @@
         <th>ID</th>
         <th>Image</th>
         <th>Name</th>
-        <th>Discription</th>
+        <th>Description</th>
+        <th>Content</th>
         <th>Category</th>
-        <th>Options</th>
     </thead>
 
     <tbody>
@@ -23,7 +23,7 @@ $sql = "SELECT * FROM `products`";
             <td><?php echo $row["category_id"] ?></td>
             <td>
                 <div class="btn-group" role="group">
-                    <a href="options/edit.php?id=<?php echo $row["id"] ?>" class="btn btn-info btn-fill mr-1">Edit</a>
+                    <a href="options/edit-product.php?id=<?php echo $row["id"] ?>" class="btn btn-info btn-fill mr-1">Edit</a>
                     <a href="options/delete.php?id=<?php echo $row["id"] ?>" class="btn btn-dark btn-fill">Delete</a>
                 </div>
             </td>

@@ -101,6 +101,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="/admin/products.php" class="btn btn-danger btn-fill pull-right ml-2 text-light">Cancel</a>
                                         <button type="submit" class="btn btn-success pull-right" name="add_product">Add
                                             new product</button>
                                         <div class="clearfix"></div>

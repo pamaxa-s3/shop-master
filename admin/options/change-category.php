@@ -1,6 +1,6 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/Configs/db.php';
-    $page = "products";
+    $page = "categories";
 
     if(isset($_POST["edit_category"]) && isset($_POST["edit_category"]) != null){
     
@@ -20,7 +20,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-image="http://picsum.photos/800" data-color="purple">
+        <div class="sidebar" data-image="http://picsum.photos/800" data-color="blue">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -45,10 +45,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                         <li class="breadcrumb-item">
-                            <a href="/admin/products.php">Products</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="/admin/options/edit-category.php">Edit Category</a>
+                            <a href="/admin/options/edit-category.php">Categories</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Change Category</li>
                     </ol>
@@ -65,27 +62,22 @@
                                         <div class="row">
                                             <div class="col-md-12 px-2">
                                                 <div class="form-group">
-                                                    <label>Current category</label>
+                                                    <label>New Category</label>
                                                 <?php
                                                     $sql = "SELECT * FROM `categories` WHERE `id` = '" . $_GET["id"] . "'" ;
                                                     $result = $conn->query($sql);
                                                     while( $row = mysqli_fetch_assoc($result) ){
                                                     ?>
-                                                            <div class="form-group">
-                                                                <div class="form-control"><?php echo $row["title"]; ?></div>
-                                                            </div>
+                                                    <input type="text" class="form-control"                                                    name="new-category"
+                                                    placeholder="Enter new category"
+                                                    value="<?php echo $row["title"]; ?>" required>
                                                     <?php
                                                     }
                                                 ?>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 px-2">
-                                                <div class="form-group">
-                                                    <label>New Category</label>
-                                                    <input type="text" class="form-control"                                                        name="new-category" placeholder="Enter new category" value="" required>
-                                                </div>
-                                            </div>
                                         </div>
+                                        <a href="/admin/options/edit-category.php" class="btn btn-danger btn-fill pull-right ml-2 text-light">Cancel</a>
                                         <button type="submit" class="btn btn-info btn-fill pull-right" name="edit_category">Edit done</button>
                                         <div class="clearfix"></div>
                                     </form>

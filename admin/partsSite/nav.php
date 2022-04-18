@@ -17,9 +17,10 @@
             <p>Products</p>
         </a>
     </li>
-    <li class="nav-item <?php if($page == "products"){ echo "categories";} ?>">
-        <a class="nav-link" href="./typography.html">
+    <li class="nav-item <?php if($page == "categories"){ echo "active";} ?>">
+        <a class="nav-link" href="/admin/options/edit-category.php">
             <i class="nc-icon nc-bullet-list-67"></i>
+            <!-- <a href="options/edit-category.php" class="btn btn-info btn-fill mx-1">Edit category</a> -->
             <p>Categories</p>
         </a>
     </li>

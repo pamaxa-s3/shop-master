@@ -1,6 +1,6 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/Configs/db.php';
-    $page = "products";
+    $page = "categories";
 
     if(isset($_POST["edit_product"]) && isset($_POST["edit_product"]) != null){
         
@@ -44,10 +44,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-                        <li class="breadcrumb-item">
-                            <a href="/admin/products.php">Products</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit Category</li>
+                        <li class="breadcrumb-item active" aria-current="page">Categories</li>
                     </ol>
                 </nav>
 
@@ -56,7 +53,7 @@
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header mx-3">
                                     <div class="row justify-content-between">
-                                        <h4 class="card-title">Edit Category</h4>
+                                        <h4 class="card-title">Categories</h4>
                                         <div class="btn-group" role="group">
                                             <a href="add-category.php" class="btn btn-success btn-fill">Add category</a>
                                         </div>
@@ -68,7 +65,7 @@
                                             <tr>
                                                 <th scope="col">Id</th>
                                                 <th scope="col">Title</th>
-                                                <th scope="col">Edit button</th>
+                                                <th scope="col">Change button</th>
                                                 <th scope="col">Delete button</th>
                                             </tr>
                                         </thead>
@@ -81,7 +78,7 @@
                                                 <tr>
                                                     <td><?php echo $row["id"] ?></td>
                                                     <td><?php echo $row["title"] ?></td>
-                                                    <td><a href="change-category.php?id=<?php echo $row["id"] ?>" class="btn btn-info btn-fill mr-1">Edit category</a></td>
+                                                    <td><a href="change-category.php?id=<?php echo $row["id"] ?>" class="btn btn-info btn-fill mr-1">Change category</a></td>
                                                     <td><a href="delete-category.php?id=<?php echo $row["id"] ?>" class="btn btn-dark">Delete category</a></td>
                                                 </tr>
                                                 <?php

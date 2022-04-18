@@ -1,6 +1,6 @@
 <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/Configs/db.php';
-    $page = "products";
+    $page = "categories";
 
     if(isset($_POST["add_category"]) && isset($_POST["add_category"]) != null){
     
@@ -20,7 +20,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="sidebar" data-image="http://picsum.photos/800" data-color="purple">
+        <div class="sidebar" data-image="http://picsum.photos/800" data-color="green">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -45,10 +45,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                         <li class="breadcrumb-item">
-                            <a href="/admin/products.php">Products</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="/admin/options/edit-category.php">Edit Category</a>
+                            <a href="/admin/options/edit-category.php">Categories</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Add Category</li>
                     </ol>
@@ -71,6 +68,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="/admin/options/edit-category.php" class="btn btn-danger btn-fill pull-right ml-2 text-light">Cancel</a>
                                         <button type="submit" class="btn btn-success btn-fill pull-right"
                                             name="add_category">Add done</button>
                                         <div class="clearfix"></div>

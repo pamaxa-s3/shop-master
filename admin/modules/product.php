@@ -12,15 +12,17 @@
 <?php
 $sql = "SELECT * FROM `products`";
     $result = $conn->query($sql);
+    
     while($row = mysqli_fetch_assoc($result)){
-?>
+        $cat = mysqli_fetch_assoc($conn->query("SELECT * FROM `categories` WHERE `id` = '" . $row["category_id"] . "'"));
+        ?>
         <tr>
             <td><?php echo $row["id"] ?></td>
             <td class="td-img"><img src="<?php echo $row["image"] ?>" /></td>
             <td><?php echo $row["title"] ?></td>
             <td><?php echo $row["description"] ?></td>
             <td><?php echo $row["content"] ?></td>
-            <td><?php echo $row["category_id"] ?></td>
+            <td><?php echo $cat["title"] ?></td>
             <td>
                 <div class="btn-group" role="group">
                     <a href="options/edit-product.php?id=<?php echo $row["id"] ?>" class="btn btn-info btn-fill mr-1">Edit</a>

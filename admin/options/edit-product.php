@@ -15,6 +15,10 @@
 ?>
 
 <?php
+    $prod_name = mysqli_fetch_assoc($conn->query("SELECT * FROM `products` WHERE `id` = '" . $_GET["id"] . "'")); 
+?>
+
+<?php
     include $_SERVER['DOCUMENT_ROOT'] . '/admin/partsSite/head.php';
 ?>
 
@@ -55,7 +59,11 @@
                         <div class="col-md-12">
                             <div class="card strpied-tabled-with-hover">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Edit product</h4>
+                                    <div class="row">
+                                        <h4 class="card-title col-2">Edit product</h4>
+                                        <h4 class="card-title col-9"><?php echo $prod_name["title"] ?></h4>
+                                    </div>
+                                    
                                 </div>
 
                                 <div class="card-body">
@@ -78,14 +86,14 @@
                                             <div class="col-md-3 px-1">
                                                 <div class="form-group">
                                                     <label>Title</label>
-                                                    <input type="text" class="form-control"                                                        name="prod-title" placeholder="Title" value="" required>
+                                                    <input type="text" class="form-control" name="prod-title" placeholder="" value="<?php echo $prod_name["title"] ?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-7 pl-1">
                                                 <div class="form-group">
                                                     <label>Short list</label>
                                                     <input type="text" class="form-control"
-                                                    name="prod-description" placeholder="Description" value="" required>
+                                                    name="prod-description" placeholder="" value="<?php echo $prod_name["description"] ?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,10 +101,12 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>About product</label>
-                                                    <textarea rows="8" cols="120" class="form-control" name="prod-content" placeholder="Content" value="" required></textarea>
+                                                    <input type="text" class="form-control"
+                                                    name="prod-content" placeholder="" value="<?php echo $prod_name["content"] ?>" required>
                                                 </div>
                                             </div>
                                         </div>
+                                        <a href="/admin/products.php" class="btn btn-danger btn-fill pull-right ml-2 text-light">Cancel</a>
                                         <button type="submit" class="btn btn-info btn-fill pull-right" name="edit_product">Edit done</button>
                                         <div class="clearfix"></div>
                                     </form>

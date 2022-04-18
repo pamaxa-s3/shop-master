@@ -44,7 +44,6 @@
                                     <div class="row justify-content-between">
                                         <h4 class="card-title">Product info</h4>
                                         <div class="btn-group" role="group">
-                                            <a href="options/edit-category.php" class="btn btn-info btn-fill mx-1">Edit category</a>
                                             <a href="options/add-product.php" class="btn btn-success btn-fill">Add product</a>
                                         </div>
                                     </div>
